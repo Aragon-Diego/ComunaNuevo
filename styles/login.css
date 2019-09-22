@@ -21,11 +21,10 @@
     width:50%;
 }
 .LoginIzq{
-    background-color: red;
+    background-color: #833aaa;
     float: left;
 }
 .LoginDer{
-    background-color: pink;
+    background-color: #41c48f;
     float: left;
-    
 }

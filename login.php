@@ -9,8 +9,26 @@
 <body>
     <div class="LoginDiv">
         <?php include("logo.php");?>
-        <div class="LoginIzq"></div>
-        <div class="LoginDer"></div>
+        <!-- 
+            div para hacer el registro
+        -->
+        <div class="LoginIzq">
+            <form action="welcome.php" method="post">
+                Name: <input type="text" name="name"><br>
+                E-mail: <input type="text" name="email"><br>
+                <input type="submit">
+            </form>
+        </div>
+        <!-- 
+            div para hacer el Login
+        -->
+        <div class="LoginDer">
+             <form action="welcome.php" method="post">
+                Name: <input type="text" name="name"><br>
+                E-mail: <input type="text" name="email"><br>
+                <input type="submit">
+            </form>
+        </div>
     </div>
 </body>
 </html>
