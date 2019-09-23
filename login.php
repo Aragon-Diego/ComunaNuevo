@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +16,48 @@
         -->
         <div class="LoginIzq">
             <h1>Registro</h1>
+            <?php
+            if($_SERVER["REQUEST_METHOD"] == "POST"){
+                $server = "localhost";
+                $user = "basededatos";
+                $pass ="ABC123";
+                $dbase ="kiosco_intel";
+                $conexion = mysqli_connect($server, $user, $pass, $dbase) or die ("Error de conexión ".mysqli_connect_error());
+                $conexion->set_charset("utf8");
+                $usuario = $_POST['usuario'];
+                $contra = $_POST['contra'];
+                $confContra = $_POST['confContra'];
+                $contraEncrip = password_hash($contra, PASSWORD_DEFAULT);
+                $consulta = mysqli_query ($conexion,"SELECT * FROM users WHERE usuario='$usuario'")
+                or die ("Error en la consulta:".mysql_error());
+                $tupla = mysqli_fetch_array ($consulta);
+
+                //Solo saber si existe un usuario con el mismo nombre
+                if(!empty($tupla)){
+                    //echo "Ya existe";
+                }else{
+                    $query = "INSERT INTO users (usuario, contrasena)
+                  VALUES ('$usuario', '$contraEncrip')";
+                    if ($conexion->query($query) === TRUE) {
+                        //echo "Se creo el usuario correctamente";
+                    } else {
+                        
+                    
+                    }
+                }
+
+
+
+                $conexion->close();
+            }
+            ?>
             <form action="login.php" method="post">
-                <label>Nombre</label>
-                <input type="text" pattern="[A-Za-z]" title="NO USES NÚMEROS :)" name="usuario">
+                <label>Nombre Completo</label>
+                <input type="text"  name="usuario">
                 <label>Contraseña</label>
-                <input type="text" name="contra">
+                <input type="password" name="contra">
                 <label>Confirmar contraseña</label>
-                <input type="text" name="confContra">
+                <input type="password" name="confContra">
                 <input type="submit" name="registro">
             </form>
         </div>
