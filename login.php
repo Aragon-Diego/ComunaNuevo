@@ -39,7 +39,7 @@
                     $query = "INSERT INTO users (usuario, contrasena)
                   VALUES ('$usuario', '$contraEncrip')";
                     if ($conexion->query($query) === TRUE) {
-                        //echo "Se creo el usuario correctamente";
+                        echo "Se creo el usuario correctamente";
                     } else {
                         
                     
