@@ -23,7 +23,7 @@
                 <input type="text" name="contra">
                 <label>Confirmar contraseña</label>
                 <input type="text" name="confContra">
-                <input type="submit" name="registro">
+                <input type="submit" name="registro" >
             </form>
         </div>
         <!-- 
@@ -36,7 +36,7 @@
                 <input type="text" name="usuario">
                 <label>Contraseña</label>
                 <input type="text" name="contra">
-                <input type="submit" name="login">
+                <input type="submit" name="login" class="loginBtn">
             </form>
             <a href="#">Se me olvidó la contraseña</a>
         </div>
