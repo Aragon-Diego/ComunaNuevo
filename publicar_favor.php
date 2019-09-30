@@ -11,6 +11,7 @@
     $(document).ready(function(){
       var errorNombre = false;
       var errorDesc = false;
+      var errorLugar = false;  
       
       $("#favor_nombre").focusout(function(){
         checarNombre();
@@ -18,7 +19,11 @@
 
       $("#fav_desc").focusout(function(){
         checarDescripcion();
-      });    
+      });
+      
+      $("#favor_lugar").focusout(function(){
+          checarLugar();
+      });
 
       $("#submitFavor").submit(function(e){
           validarSubmit(e);
@@ -48,16 +53,31 @@
         }
       }
 
+      function checarLugar(){
+        if($('#favor_lugar').val().length === 0 ){
+          alert('Vacío.');
+          $("#errorLugar").text("No puede dejar el campo vacío");
+          errorLugar = true;
+        }
+        else{
+          $("#errorLugar").text("");
+          errorLugar =  false;
+        }
+      }
+
       function validarSubmit(e){
         var errorNombre = false;
         var errorDesc = false;
+        var errorLugar = false;
 
           checarNombre();
           console.log("NOMBRE: " + errorNombre);
           checarDescripcion();
           console.log("DESCRIPCIÓN: " + errorDescripcion);
+          checarLugar();
+          console.log("LUGAR: " + errorLugar);
 
-          if(errorNombre == false && errorTelefono == false && errorHora ==  false && errorFechaInicio == false && errorFechaFin == false && errorPrecio == false && errorDescripcion == false){
+          if(errorNombre == false && errorDescripcion == false && errorLugar == false){
             //si no hay errores, hacer submit
             alert("Favor publicado en el mercado.");
           }
@@ -132,6 +152,16 @@
           </div>
           <div class='col-lg-6'>
             <span id="errorDescripcion" class="errorSpan"></span>
+          </div>
+        </div>
+
+        <div class='row formMargin'>
+          <div class='col-lg-6'>
+            <label for="evento_desc">Lugar del evento</label>
+            <textarea placeholder="Ejemplo: En la iglesia." name="evento_lugar" id="evento_lugar" class="form-control validate" <?php if (!empty($confirm_password_err)) echo "value= '".trim($_POST['evento_lugar'])."'"; ?> maxlength="250" rows="2" required></textarea>
+          </div>
+          <div class='col-lg-6'>
+            <span id="errorLugar" class="errorSpan"></span>
           </div>
         </div>
 
