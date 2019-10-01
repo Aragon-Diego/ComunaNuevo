@@ -7,19 +7,28 @@
 }
 .bottom{
     width: 100vw;
-    height: 78vh;
+    height: 79vh;
     background-color:red;
     float: left;
 }
 .menuIcons{
-    width: 30%;
+    width: 20%;
     height:100%;
     background-color: #e2e2e2;
     float: left;
 }
 .detalles{
-    width: 70%;
+    width: 80%;
     height: 100%;
     background-color: #f5f5f5;
-    
+}
+.Logo{
+    float: left;
+    width:15%;
+    height:auto;
+    margin-left:3%;
+    margin-top:2.5%;
+}
+head{
+    display: none;
 }

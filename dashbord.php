@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="styles/dashbord.css">
     <link rel="stylesheet" type="text/css" href="styles/general.css">
+    <link rel="stylesheet" type="text/css" href="styles/iconos.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,7 +15,7 @@
     </div>
     <div class="bottom">
         <div class="menuIcons">
-
+            <?php require('iconos.php');?>
         </div>
         <div class="detalles">
 
