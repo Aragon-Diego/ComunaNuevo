@@ -1,0 +1,16 @@
+.general{
+    width: 100vw;
+    height: 100vh;
+}
+.top{
+    float: left;
+    width: 100%;
+    height: 20%;
+    background-color: #fefefe;
+}
+.bottom{
+    float: left;
+    width: 100%;
+    height: 80%;
+    background-color: red;
+}
