@@ -16,14 +16,14 @@
         -->
         <div class="LoginIzq">
             <h1>Registro</h1>
-            <form action="login.php" method="post">
+            <form action="dashbord.php" method="post">
                 <label>Nombre</label>
                 <input type="text" pattern="[A-Za-z]" title="NO USES NÚMEROS :)" name="usuario">
                 <label>Contraseña</label>
                 <input type="text" name="contra">
                 <label>Confirmar contraseña</label>
                 <input type="text" name="confContra">
-                <input type="submit" name="registro" >
+                <input type="submit" name="registro" href="dashbord.php">>
             </form>
         </div>
         <!-- 
@@ -31,12 +31,12 @@
         -->
         <div class="LoginDer">
             <h1>Login</h1>
-            <form action="login.php" method="post">
+            <form action="dashbord.php" method="post">
                 <label>Nombre</label>
                 <input type="text" name="usuario">
                 <label>Contraseña</label>
                 <input type="text" name="contra">
-                <input type="submit" name="login" class="loginBtn">
+                <input type="submit" name="login" class="loginBtn" href="dashbord.php">
             </form>
             <a href="recuperar_contrasena.php">Se me olvidó la contraseña</a>
         </div>
