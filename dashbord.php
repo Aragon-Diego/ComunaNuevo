@@ -12,6 +12,9 @@
 <body>
     <div class="top">
         <?php require('logo.php'); ?>
+        <a class="dashbordA">salir</a>
+        <a class="dashbordA">mi cuenta</a>
+        <button class="btnPublicar">Publicar ▼</button>        
     </div>
     <div class="bottom">
         <div class="menuIcons">

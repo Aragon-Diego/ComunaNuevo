@@ -32,3 +32,16 @@
 head{
     display: none;
 }
+.btnPublicar{
+    background-color: #fac304;
+    float:right;
+    font-size:25px;
+    border-radius: 5%;
+    margin-top:3%;
+}
+.dashbordA{
+    float: right;
+    font-size: 25px;
+    margin-top:3%;
+    margin-right:10px;
+}
