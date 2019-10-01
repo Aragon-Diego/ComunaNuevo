@@ -38,7 +38,7 @@
                 <input type="text" name="contra">
                 <input type="submit" name="login" class="loginBtn">
             </form>
-            <a href="#">Se me olvidó la contraseña</a>
+            <a href="recuperar_contrasena.php">Se me olvidó la contraseña</a>
         </div>
     </div>
 </body>
