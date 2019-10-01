@@ -9,17 +9,15 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="general">
-        <div class="top">
+    <div class="top">
+        <?php require('logo.php'); ?>
+    </div>
+    <div class="bottom">
+        <div class="menuIcons">
 
         </div>
-        <div class="bottom">
-            <div class="menuIcons">
+        <div class="detalles">
 
-            </div>
-            <div class="detalles">
-
-            </div>
         </div>
     </div>
 </body>
