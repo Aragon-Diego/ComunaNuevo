@@ -18,7 +18,7 @@
             <h1>Registro</h1>
             <form action="login.php" method="post">
                 <label>Nombre</label>
-                <input type="text" pattern="[A-Za-z]" title="NO USES NÚMEROS :)" name="usuario">
+                <input type="text" name="usuario">
                 <label>Contraseña</label>
                 <input type="text" name="contra">
                 <label>Confirmar contraseña</label>
