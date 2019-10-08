@@ -15,13 +15,13 @@
         <a class="dashbordA" href="login.php">Salir</a>
         <a class="dashbordA" href="micuenta.php">Mi cuenta</a>
         <button class="btnPublicar" >Publicar ▼</button>        
+
     </div>
     <div class="bottom">
         <div class="menuIcons">
             <?php require('iconos.php');?>
         </div>
         <div class="detalles">
-
         </div>
     </div>
 </body>
