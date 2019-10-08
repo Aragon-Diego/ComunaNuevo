@@ -14,12 +14,12 @@
     echo '<div class="menuDiv">';
     echo '<img class="menuIcono" src="img/favores.png" alt="icono de favores" />';
     echo '<br/>';
-    echo '<p class="menuP">favores</p>';
+    echo '<p class="menuP">Favores</p>';
     echo '</div>';
 
     echo '<div class="menuDiv">';
     echo '<img class="menuIcono" src="img/corazon.png" alt="icono de favores" />';
     echo '<br/>';
-    echo '<p class="menuP">juego</p>';
+    echo '<p class="menuP">Juego</p>';
     echo '</div>';
 ?>
