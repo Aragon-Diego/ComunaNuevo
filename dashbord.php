@@ -21,7 +21,7 @@
             <?php require('iconos.php');?>
         </div>
         <div class="detalles">
-            
+            <a></a>
         </div>
     </div>
 </body>
