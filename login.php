@@ -18,7 +18,7 @@
             <h1>Registro</h1>
             <form action="dashbord.php" method="post">
                 <label>Nombre</label>
-                <input type="text" pattern="[A-Za-z]" title="NO USES NÚMEROS :)" name="usuario">
+                <input type="text" name="usuario">
                 <label>Contraseña</label>
                 <input type="text" name="contra">
                 <label>Confirmar contraseña</label>
@@ -30,7 +30,7 @@
             div para hacer el Login
         -->
         <div class="LoginDer">
-            <h1>Login</h1>
+            <h1>Ingresar</h1>
             <form action="dashbord.php" method="post">
                 <label>Nombre</label>
                 <input type="text" name="usuario">

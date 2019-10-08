@@ -139,7 +139,6 @@
 
       function checarPrecio(){
         if($('#producto_precio').val() > 0){
-          //alert('Contraseñas coinciden.');
           $("#errorPrecio").text("");
         }
         else{
