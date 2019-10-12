@@ -12,8 +12,8 @@
 <body>
     <div class="top">
         <?php require('logo.php'); ?>
-        <a class="dashbordA">salir</a>
-        <a class="dashbordA">mi cuenta</a>
+        <a class="dashbordA">Salir</a>
+        <a class="dashbordA">Mi cuenta</a>
         <button class="btnPublicar">Publicar ▼</button>        
     </div>
     <div class="bottom">
@@ -21,7 +21,7 @@
             <?php require('iconos.php');?>
         </div>
         <div class="detalles">
-            
+            <a></a>
         </div>
     </div>
 </body>

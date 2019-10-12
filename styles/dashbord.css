@@ -35,13 +35,14 @@ head{
 .btnPublicar{
     background-color: #fac304;
     float:right;
-    font-size:25px;
+    font-size:20px;
     border-radius: 5%;
-    margin-top:1%;
+    margin-top:1.25%;
+    margin-right: 20px;
 }
 .dashbordA{
     float: right;
     font-size: 25px;
     margin-top:1%;
-    margin-right:10px;
+    margin-right:20px;
 }
