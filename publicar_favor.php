@@ -30,11 +30,11 @@
                     <label>Titulo del favor</label>
                     <input type="text" name="nombreEvnt">
                     <label>Seleccione el tipo de favor:</label>
-                    <input type="radio" name="gender" value="fis"> Físico<br>
-                    <input type="radio" name="gender" value="Tec"> Tecnología<br>
-                    <input type="radio" name="gender" value="bien"> Bienestar<br> 
-                    <input type="radio" name="gender" value="hog"> Hogar<br> 
-                    <input type="radio" name="gender" value="otro"> Otro<br>
+                      <input type="radio" name="gender" value="fis"> Físico<br>
+                      <input type="radio" name="gender" value="Tec"> Tecnología<br>
+                      <input type="radio" name="gender" value="bien"> Bienestar<br> 
+                      <input type="radio" name="gender" value="hog"> Hogar<br> 
+                      <input type="radio" name="gender" value="otro"> Otro<br>
                     <label>Descripcion del favor</label>
                     <textarea name="descr" rows="10" cols="50" placeholder="Describa el evento"></textarea>
                     <label>Lugar del evento</label>
