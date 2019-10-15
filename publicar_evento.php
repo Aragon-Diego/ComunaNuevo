@@ -25,8 +25,8 @@
             <?php require('iconos.php');?>
         </div>
         <div class="detalles">
-            <h1>Publicar evento</h1>
-                <form action="publicar_evento.php" method="post">
+            <h1>Publicar Evento</h1>
+                <form action="ver_calendario.php" method="post">
                     <label>Nombre del evento</label>
                     <input type="text" name="nombreEvnt">
                     <label>Dia en que inicia el evento</label>
@@ -39,8 +39,6 @@
                     <input type="time" name="horaFin">
                     <label>Precio del evento</label>
                     <input type="number" name="precio"min="0" value="0" step="0.01">
-                    <label>Hora de termino del evento</label>
-                    <input type="time" name="horaFin">
                     <label>Descripcion del evento</label>
                     <textarea name="descr" rows="10" cols="50" placeholder="Describa el evento"></textarea>
                     <label>Lugar del evento</label>
