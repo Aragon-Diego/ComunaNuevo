@@ -14,7 +14,7 @@
         <?php include("logo.php");?>
         <div class="Reccuadro2">
             <h1>Recuperar Contraseña</h1>
-            <form action="recuperar_contrasena2.php" method="post">
+            <form action="dashboard.php" method="post">
                 <label>Contraseña Nueva</label>
                 <input type="text" name="contra">
                 <label>Confirmar Nueva Contraseña</label>
