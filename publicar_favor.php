@@ -27,7 +27,7 @@
         <div class="detalles">
             <h1>Pedir Favor</h1>
                 <form action="ver_favores.php" method="post">
-                    <label>Titulo del Favor</label>
+                    <label>Titulo del favor</label>
                     <input type="text" name="nombreFav">
                     <label>Seleccione el tipo de favor:</label>
                       <input type="radio" name="gender" value="fis"> Físico<br>
