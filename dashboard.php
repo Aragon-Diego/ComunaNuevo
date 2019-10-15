@@ -13,8 +13,7 @@
     <div class="top">
         <?php require('logo.php'); ?>
         <a class="dashbordA" href="login.php">Salir</a>
-        <a class="dashbordA" href="cuenta.php">Mi cuenta</a>
-        
+                
         <select class="btnPublicar"name=publicar">
             <option value="">Publicar</option>
             <option value="E">Evento</option>
