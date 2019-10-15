@@ -15,9 +15,9 @@
         <div class="Reccuadro2">
             <h1>Recuperar Contraseña</h1>
             <form action="recuperar_contrasena2.php" method="post">
-                <label>Contraseña</label>
+                <label>Contraseña Nueva</label>
                 <input type="text" name="contra">
-                <label>Confirmar contraseña</label>
+                <label>Confirmar Nueva Contraseña</label>
                 <input type="text" name="confContra">
                 <input type="submit" name="registro">
             </form>
