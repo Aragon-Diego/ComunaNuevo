@@ -42,7 +42,7 @@
                             $_SESSION['user'] = $usuarioI;
                             $_SESSION['pass'] = $contraI;
                             echo "<script>
-                            window.location.href='http://localhost/ComunaNuevo/dashbord.php';
+                            window.location.href='http://localhost/ComunaNuevo/dashboard.php';
                             </script>";
                             
                         }
