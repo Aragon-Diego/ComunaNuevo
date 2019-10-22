@@ -24,7 +24,7 @@
 }
 .Logo{
     float: left;
-    width:10%;
+    width:9%;
     height:auto;
     margin-left:5.5%;
     margin-top:0.5%;
@@ -32,17 +32,56 @@
 head{
     display: none;
 }
-.btnPublicar{
+
+.dropbtn {
     background-color: #fac304;
-    float:right;
-    font-size:20px;
-    border-radius: 5%;
-    margin-top:1.25%;
-    margin-right: 20px;
+    float: right;
+    color: black;
+    margin: 16px;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
 }
+      
+.dropdown {
+    position: relative;
+    float: right;
+    display: inline-block;
+}
+     
+.dropdown-content {
+    right: 0;
+    display: none;
+    float: right;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 16px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+      
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+      
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+      
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+      
+.dropdown:hover .dropbtn {
+    background-color: #fac304;
+}
+
 .dashbordA{
     float: right;
-    font-size: 25px;
-    margin-top:1%;
+    font-size: 16px;
+    margin-top:1.5%;
     margin-right:20px;
 }

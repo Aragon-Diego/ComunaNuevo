@@ -105,7 +105,7 @@
             div para hacer el Login
         -->
         <div class="LoginDer">
-            <h1>Inicio de Sesion</h1>
+            <h1>Inicio de Sesión</h1>
             <form action="login.php" method="post">
                 <label>Nombre</label>
                 <input type="text" name="usuarioI">

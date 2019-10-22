@@ -13,15 +13,18 @@
     <div class="top">
         <?php require('logo.php'); ?>
         <a class="dashbordA" href="login.php">Salir</a>
-                
-        <select class="btnPublicar"name=publicar">
-            <option value="">Publicar</option>
-            <option value="E">Evento</option>
-            <option value="F">Favor</option>
-            <option value="P">Producto</option>
-        </select>
-      
+
+            <div class="dropdown">
+                <button class="dropbtn">PUBLICAR</button>
+                <div class="dropdown-content">
+                    <a href="publicar_eveto">Evento</a>
+                    <a href="publicar_favor">Favor</a>
+                    <a href="publicar_producto">Producto</a>
+                </div>
+            </div>        
+       
     </div>
+
     <div class="bottom">
         <div class="menuIcons">
             <?php require('iconos.php');?>
