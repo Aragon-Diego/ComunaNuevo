@@ -10,21 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top">
-        <?php require('logo.php'); ?>
-        <a class="dashbordA" href="login.php">Salir</a>
-
-            <div class="dropdown">
-                <button class="dropbtn">PUBLICAR</button>
-                <div class="dropdown-content">
-                    <a href="publicar_eveto">Evento</a>
-                    <a href="publicar_favor">Favor</a>
-                    <a href="publicar_producto">Producto</a>
-                </div>
-            </div>        
-       
-    </div>
-
+    <?php
+        require('top.php');
+    ?>
     <div class="bottom">
         <div class="menuIcons">
             <?php require('iconos.php');?>

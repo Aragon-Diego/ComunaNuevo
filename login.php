@@ -23,8 +23,8 @@
             //REGISTRO
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $server = "localhost";
-                $user = "basededatos";
-                $pass ="ABC123";
+                $user = "root";
+                $pass ="";
                 $dbase ="kiosco_intel";
                 if($_POST['login']){
                     $usuarioI = $_POST['usuarioI'];
