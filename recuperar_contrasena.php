@@ -16,9 +16,9 @@
             <h1>Recuperar Contraseña</h1>
             <form action="recuperar_contrasena2.php" method="post">
                 <label>Nombre</label>
-                <input type="text" pattern="[A-Za-z]" title="NO USES NÚMEROS :)" name="usuario">
-                <label>Escribe tu nombre y fecha (día mes año) de nacimiento sin espacios (ej AnaMariaGarzaGarcia10121959)</label>
-                <input type="text" name="contra">
+                <input type="text" name="usuario">
+                <label>Fecha de nacimiento</label>
+                <input type="date" name="fecha"> 
                 <input type="submit" name="registro" href="recuperar_contrasena2.php">
             </form>
         </div>

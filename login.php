@@ -94,6 +94,8 @@
             <form action="login.php" method="post">
                 <label>Nombre</label>
                 <input type="text" name="usuario">
+                <label>Fecha de nacimiento</label>
+                <input type="date" name="fecha">
                 <label>Contraseña</label>
                 <input type="password" name="contra">
                 <label>Confirmar contraseña</label>
