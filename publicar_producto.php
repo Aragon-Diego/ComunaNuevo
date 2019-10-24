@@ -14,13 +14,10 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top">
-        <?php require('logo.php'); ?>
-        <a class="dashbordA">Salir</a>
-        <a class="dashbordA">Mi cuenta</a>
-        <button class="btnPublicar">Publicar ▼</button>        
-    </div>
-  <div class="bottom">
+    <?php
+        require('top.php');
+    ?>
+    <div class="bottom">
         <div class="menuIcons">
             <?php require('iconos.php');?>
         </div>
@@ -43,7 +40,6 @@
                     <input type="number" name="precio"min="0" value="0" step="0.01">
                     <label>Descripcion del Producto</label>
                     <textarea name="descr" rows="10" cols="50" placeholder="Describa el Producto"></textarea>
-                    
                     <input type="submit" name="formulario" >
                 </form>
           </div>
