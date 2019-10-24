@@ -1,0 +1,33 @@
+.detalles2{
+    overflow-x:scroll;
+    height:80%;
+    overflow-x: auto;
+    display: flex;
+    color:white;
+}
+.detalles h1{
+    display: block;
+    padding-left:5%;
+    padding-top:4%;
+}
+.contenido{
+    width:30%;
+    height:95%;
+    background-color:red;
+    float: left;
+    flex-shrink: 0;
+    margin-left:5%;
+}
+.calendario{
+    background-color:#833aaa;
+}
+.contenido h3,
+.contenido h4{
+    display: block;
+}
+.producto{
+    background-color: #e98b36;
+}
+.favor{
+    background-color: #22b2a9;
+}
