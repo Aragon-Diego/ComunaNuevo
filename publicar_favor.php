@@ -14,6 +14,47 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    //Datos de la base
+    $server = "localhost";
+    $user = "basededatos";
+    $pass ="ABC123";
+    $dbase ="kiosco_intel";
+
+    //Variables
+    $nombreFav = $_POST['nombreFav'];
+    $gender = $_POST['gender'];
+    $fecha = $_POST['fecha'];
+    $lugar = $_POST['lugar'];
+    $descr = $_POST['descr']; 
+    
+
+    // Create connection
+    $conn = new mysqli($server, $user, $pass, $dbase);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO favor (propietarioID, voluntarioID, titulo, contenido,lugar, categoria, fechaINI)
+    VALUES ('1', '2', ' $nombreFav', '$descr','$lugar','$gender','$fecha')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>
+                                alert('Se publico con éxito el favor');
+                                window.location= 'publicar_favor.php'
+                            </script>";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+
+    
+}
+?>
+
     <?php
         require('top.php');
     ?>
@@ -23,15 +64,17 @@
         </div>
         <div class="detalles">
             <h1>Pedir Favor</h1>
-            <form action="ver_favores.php" method="post">
+            <form action="publicar_favor.php" method="post">
                 <label>Titulo del favor</label>
                 <input type="text" name="nombreFav">
                 <label>Seleccione el tipo de favor:</label>
-                <input type="radio" name="gender" value="fis"> Físico<br>
-                <input type="radio" name="gender" value="Tec"> Tecnología<br>
-                <input type="radio" name="gender" value="bien"> Bienestar<br> 
-                <input type="radio" name="gender" value="hog"> Hogar<br> 
+                <input type="radio" name="gender" value="fisico"> Físico<br>
+                <input type="radio" name="gender" value="tecnologico"> Tecnología<br>
+                <input type="radio" name="gender" value="bienestar"> Bienestar<br> 
+                <input type="radio" name="gender" value="hogar"> Hogar<br> 
                 <input type="radio" name="gender" value="otro"> Otro<br>
+                <label>Fecha del favor</label>
+                <input type="date" name="fecha"> 
                 <label>Descripcion del Favor</label>
                 <textarea name="descr" rows="10" cols="50" placeholder="Describa el Favor"></textarea>
                 <label>Lugar del favor</label>

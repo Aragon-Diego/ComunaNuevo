@@ -14,6 +14,48 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    //Datos de la base
+    $server = "localhost";
+    $user = "basededatos";
+    $pass ="ABC123";
+    $dbase ="kiosco_intel";
+
+    //Variables
+    $nombreEvnt = $_POST['nombreEvnt'];
+    $tel = $_POST['tel'];
+    $diaIn = $_POST['diaIn'];
+    $horaIn = $_POST['horaIn'];
+    $diaFin = $_POST['diaFin'];
+    $horaFin = $_POST['horaFin'];
+    $precio = $_POST['precio'];
+    $descr = $_POST['descr'];
+
+    // Create connection
+    $conn = new mysqli($server, $user, $pass, $dbase);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO producto (nombre,descripcion, usuarioID, telefono, precio, fecha_ini, fecha_fin, hora, hora_fin)
+    VALUES ('$nombreEvnt', '$descr', '12', '$tel', '$precio','$diaIn','$diaFin','$horaIn','$horaFin')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>
+                                alert('Se publico con éxito el producto');
+                                window.location= 'publicar_producto.php'
+                            </script>";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+
+    
+}
+?>
     <?php
         require('top.php');
     ?>
@@ -23,11 +65,11 @@
         </div>
         <div class="detalles">
             <h1>Publicar Producto</h1>
-                <form action="ver_producto.php" method="post">
+                <form action="publicar_producto.php" method="post">
                     <label>Nombre del producto</label>
                     <input type="text" name="nombreEvnt">
                     <label>Telefono de contacto</label>
-                    <input type="number" name="Lugar"> 
+                    <input type="number" name="tel"> 
                     <label>Dia en que inicia el producto</label>
                     <input type="date" name="diaIn">
                     <label>Hora de inicio del producto</label>
