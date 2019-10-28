@@ -63,6 +63,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <?php require('iconos.php');?>
         </div>
         <div class="detalles">
+        <?php
+                $hoy = getdate();
+                $year = $hoy['year'];
+                $day = $hoy['mday']-1;
+                $month = $hoy['mon'];
+                   
+            ?>
             <h1>Pedir Favor</h1>
             <form action="publicar_favor.php" method="post">
                 <label>Titulo del favor</label>
@@ -74,7 +81,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="radio" name="gender" value="hogar"> Hogar<br> 
                 <input type="radio" name="gender" value="otro"> Otro<br>
                 <label>Fecha del favor</label>
-                <input type="date" name="fecha"> 
+                <input type="date" name="fecha" min=<?php echo "$year-$month-$day";?>> 
                 <label>Descripcion del Favor</label>
                 <textarea name="descr" rows="10" cols="50" placeholder="Describa el Favor"></textarea>
                 <label>Lugar del favor</label>

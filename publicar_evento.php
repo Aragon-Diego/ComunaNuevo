@@ -61,18 +61,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <?php require('iconos.php');?>
         </div>
         <div class="detalles">
+            <?php
+                $hoy = getdate();
+                $year = $hoy['year'];
+                $day = $hoy['mday']-1;
+                $month = $hoy['mon'];
+                   
+            ?>
             <h1>Publicar evento</h1>
             <form action="publicar_evento.php" method="post">
                 <label>Nombre del evento</label>
                 <input type="text" name="nombreEvnt">
                 <label>Dia en que inicia el evento</label>
-                <input type="date" name="diaIn">
+                <input type="date" name="diaIn" min=<?php echo "$year-$month-$day";?>>
                 <label>Hora de inicio del evento</label>
-                <input type="time" name="horaIn">
+                <input type="time"  name="horaIn">
                 <label>Dia en que termina el evento</label>
-                <input type="date" name="diaFin">
+                <input type="date" name="diaFin" min=<?php echo "$year-$month-$day";?>>
                 <label>Hora de termino del evento</label>
-                <input type="time" name="horaFin">
+                <input type="time" name="horaFin" min="09:00">
                 <label>Precio del evento</label>
                 <input type="number" name="precio"min="0" value="0" step="0.01">
                 <label>Descripcion del evento</label>

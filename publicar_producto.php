@@ -64,19 +64,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <?php require('iconos.php');?>
         </div>
         <div class="detalles">
+        <?php
+                $hoy = getdate();
+                $year = $hoy['year'];
+                $day = $hoy['mday']-1;
+                $month = $hoy['mon'];
+                   
+            ?>
             <h1>Publicar Producto</h1>
                 <form action="publicar_producto.php" method="post">
                     <label>Nombre del producto</label>
                     <input type="text" name="nombreEvnt">
                     <label>Telefono de contacto</label>
                     <input type="number" name="tel"> 
-                    <label>Dia en que inicia el producto</label>
-                    <input type="date" name="diaIn">
-                    <label>Hora de inicio del producto</label>
+                    <label>Dia en que inicia la venta del producto</label>
+                    <input type="date" name="diaIn" min=<?php echo "$year-$month-$day";?>>
+                    <label>Hora de inicio de la venta producto</label>
                     <input type="time" name="horaIn">
-                    <label>Dia en que termina el producto</label>
-                    <input type="date" name="diaFin">
-                    <label>Hora de termino del producto</label>
+                    <label>Dia en que termina la venta del producto</label>
+                    <input type="date" name="diaFin" min=<?php echo "$year-$month-$day";?>>
+                    <label>Hora de termino de la venta del producto</label>
                     <input type="time" name="horaFin">
                     <label>Precio del producto</label>
                     <input type="number" name="precio"min="0" value="0" step="0.01">
