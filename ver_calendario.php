@@ -61,7 +61,7 @@
                     echo '<h4 class="lugar">Precio: $',$tupla['precio'],'</h4>';
                     echo '</div>';
                 } 
-                ;
+                
                 ?>
            </div>
         </div>
