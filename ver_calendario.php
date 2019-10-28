@@ -11,6 +11,24 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
+<?php
+    //Datos de la base
+    $server = "localhost";
+    $user = "basededatos";
+    $pass ="ABC123";
+    $dbase ="kiosco_intel";
+
+    $conexion = mysqli_connect ($server,$user,$pass,$dbase)
+    or die ("Error de conexión:".mysqli_connect_error());
+    mysqli_set_charset($conexion, "utf8");
+    $consulta= mysqli_query ($conexion,"SELECT * FROM evento")
+    or die ("Error en la consulta:".mysql_error());
+    $nfilas = mysqli_num_rows ($consulta);
+    $sum = 0;
+
+    
+
+?>
     <?php
         require('top.php');
     ?>
@@ -23,15 +41,27 @@
            <br/>
            <br/>
            <div class="detalles2">
-                <?php 
-                    for($i=0;$i<20;$i++){
-                        echo('<div class="contenido calendario">
-                                <h3>{variable con el titulo}</h3>
-                                <h4 class="fecha">dd/mm/aa</h4>
-                                <p class="desc">{variable con descripcion del evento}</p>
-                                <h4 class="lugar">{variable del lugar del evento}</h4>
-                            </div>');
-                    }
+                <?php
+                
+                for($i=0;$i<$nfilas;$i++){
+                    echo'<div class="contenido calendario">';
+                    $tupla = mysqli_fetch_array ($consulta);
+                    $hora = strtotime($tupla['horaINI']);
+                    $hora2 = strtotime($tupla['horaFin']);
+                    $date = date_create($tupla['fechaINI']);
+                    $date2 = date_create($tupla['fechaFIN']);
+                     
+                    echo '<h3>', $tupla['titulo'] ,'<h3>';
+                    echo '<br>';
+                    echo '<h4 class="fecha"> Inicio: ',date_format($date, 'd/m/y'),'</h4>';
+                    echo '<h4 class="fecha"> Fin: ',date_format($date2, 'd/m/y'),'</h4>';
+                    echo '<h4 class="fecha"> De: ',date("h:i a", $hora),' a ', date("h:i a", $hora2) ,'</h4>';
+                    echo '<p class="desc">',$tupla['contenido'],'</p>';
+                    echo '<h4 class="lugar">Lugar: ',$tupla['lugar'],'</h4>';
+                    echo '<h4 class="lugar">Precio: $',$tupla['precio'],'</h4>';
+                    echo '</div>';
+                } 
+                ;
                 ?>
            </div>
         </div>
