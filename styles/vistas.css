@@ -31,3 +31,27 @@
 .favor{
     background-color: #22b2a9;
 }
+.contenido h3,
+.contenido .fecha,
+.contenido .desc,
+.contenido .lugar{
+    padding-left:5px;
+    padding-top:2%;
+    border-bottom:1px solid white;
+}
+.contenido h3{   
+    padding-bottom:18%;
+}
+.contenido .fecha{
+    padding-top:5%;
+    padding-bottom:5%;
+}
+.contenido .desc{
+    width:99%;
+    min-height:40%;
+    max-height:45%;
+}
+.contenido .lugar{
+    padding-top:5%;
+    padding-bottom:5%;
+}

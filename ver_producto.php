@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/dashbord.css">
     <link rel="stylesheet" type="text/css" href="styles/general.css">
     <link rel="stylesheet" type="text/css" href="styles/iconos.css">
     <link rel="stylesheet" type="text/css" href="styles/vistas.css">    
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    
 </head>
 <body>
 <?php
     //Datos de la base
     $server = "localhost";
-    $user = "basededatos";
-    $pass ="ABC123";
+    $user = "root";
+    $pass =null;
     $dbase ="kiosco_intel";
 
     $conexion = mysqli_connect ($server,$user,$pass,$dbase)
@@ -51,11 +52,8 @@
                     $date = date_create($tupla['fecha_ini']);
                     $date2 = date_create($tupla['fecha_fin']);
                      
-                    echo '<h3>', $tupla['nombre'] ,'<h3>';
-                    echo '<br>';
-                    echo '<h4 class="fecha"> Inicio: ',date_format($date, 'd/m/y'),'</h4>';
-                    echo '<h4 class="fecha"> Fin: ',date_format($date2, 'd/m/y'),'</h4>';
-                    echo '<h4 class="fecha"> De: ',date("h:i a", $hora),' a ', date("h:i a", $hora2) ,'</h4>';
+                    echo '<h3>', $tupla['nombre'] ,'</h3>';
+                    echo '<h4 class="fecha"> Inicio: ',date_format($date, 'd/m/y'),' Fin: ',date_format($date2, 'd/m/y'),' De: ',date("h:i a", $hora),' a ', date("h:i a", $hora2) ,'</h4>';
                     echo '<p class="desc">',$tupla['descripcion'],'</p>';
                     echo '<h4 class="lugar">Lugar: ',$tupla['telefono'],'</h4>';
                     echo '<h4 class="lugar">Precio: $',$tupla['precio'],'</h4>';
