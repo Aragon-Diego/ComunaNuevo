@@ -19,8 +19,8 @@
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     //Datos de la base
     $server = "localhost";
-    $user = "basededatos";
-    $pass ="ABC123";
+    $user = "root";
+    $pass = "";
     $dbase ="kiosco_intel";
 
     //Variables

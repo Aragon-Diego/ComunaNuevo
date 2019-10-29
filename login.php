@@ -26,8 +26,8 @@
             //REGISTRO
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $server = "localhost";
-                $user = "basededatos";
-                $pass ="ABC123";
+                $user = "root";
+                $pass = "";
                 $dbase ="kiosco_intel";
                 if($_POST['login']){
                     $usuarioI = $_POST['usuarioI'];
@@ -57,6 +57,7 @@
                     $contra = $_POST['contra'];
                     $confContra = $_POST['confContra'];
                     $contraEncrip = password_hash($contra, PASSWORD_DEFAULT);
+                    $fecha =  $_POST['fecha'];
                     $consulta = mysqli_query ($conexion,"SELECT * FROM users WHERE usuario='$usuario'")
                     or die ("Error en la consulta:".mysql_error());
                     $tupla = mysqli_fetch_array ($consulta);
@@ -75,8 +76,8 @@
                                 window.location= 'login.php'
                             </script>";
                     }else{
-                        $query = "INSERT INTO users (usuario, contrasena)
-                    VALUES ('$usuario', '$contraEncrip')";
+                        $query = "INSERT INTO users (usuario, contrasena, nacimiento)
+                    VALUES ('$usuario', '$contraEncrip', $fecha)";
                         if ($conexion->query($query) === TRUE) {
                             $conexion->close();
                         }
