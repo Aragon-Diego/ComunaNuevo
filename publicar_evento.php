@@ -1,3 +1,6 @@
+<?php
+  session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +15,11 @@
 </head>
 <body>
 <?php
+if(!isset($_SESSION["user"]) && !isset($_SESSION["pass"])){
+    echo "<script>
+                            window.location.href='http://localhost/ComunaNuevo/login.php';
+                            </script>";
+}else{
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     //Datos de la base
     $server = "localhost";
@@ -21,13 +29,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     //Variables
     $nombreEvnt = $_POST['nombreEvnt'];
-    $lugar = $_POST['lugar'];
+    $lugar = $_POST['Lugar'];
     $diaIn = $_POST['diaIn'];
     $horaIn = $_POST['horaIn'];
     $diaFin = $_POST['diaFin'];
     $horaFin = $_POST['horaFin'];
     $precio = $_POST['precio'];
     $descr = $_POST['descr'];
+    $propietario = $_SESSION["user"];
 
     // Create connection
     $conn = new mysqli($server, $user, $pass, $dbase);
@@ -35,9 +44,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+    $consultaF = mysqli_query ($conn,"SELECT id FROM users WHERE usuario='$propietario'")
+    or die ("Error en la consulta:".mysql_error());
+    $tuplaF = mysqli_fetch_array ($consultaF);
+    $usuario = $tuplaF['id'];
 
     $sql = "INSERT INTO evento (contenido,propietarioID, fechaINI, fechaFIN, titulo,horaINI,horaFin, precio, lugar)
-    VALUES ('$descr','12','$diaIn','$diaFin','$nombreEvnt', '$horaIn','$horaFin', '$precio', '$lugar')";
+    VALUES ('$descr','$usuario','$diaIn','$diaFin','$nombreEvnt', '$horaIn','$horaFin', '$precio', '$lugar')";
 
     if ($conn->query($sql) === TRUE) {
         echo "<script>
@@ -88,6 +101,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="text" name="Lugar"> 
                 <input type="submit" name="formulario" >
             </form>
+<?php } ?>
         </div>
     </div>
 </body>

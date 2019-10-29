@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +16,8 @@
 <?php
     //Datos de la base
     $server = "localhost";
-    $user = "root";
-    $pass =null;
+    $user = "basededatos";
+    $pass ="ABC123";
     $dbase ="kiosco_intel";
 
     $conexion = mysqli_connect ($server,$user,$pass,$dbase)
@@ -51,11 +52,19 @@
                     $hora2 = strtotime($tupla['hora_fin']);
                     $date = date_create($tupla['fecha_ini']);
                     $date2 = date_create($tupla['fecha_fin']);
+                    $users = $tupla['usuarioID'];
+                    $consultaF = mysqli_query ($conexion,"SELECT usuario FROM users WHERE id='$users'")
+                    or die ("Error en la consulta:".mysql_error());
+                    $tuplaF = mysqli_fetch_array ($consultaF);
+                    $usuario = $tuplaF['usuario'];
                      
                     echo '<h3>', $tupla['nombre'] ,'</h3>';
-                    echo '<h4 class="fecha"> Inicio: ',date_format($date, 'd/m/y'),' Fin: ',date_format($date2, 'd/m/y'),' De: ',date("h:i a", $hora),' a ', date("h:i a", $hora2) ,'</h4>';
+                    echo '<h4 class="fecha"> Lo vende: ',$usuario ,'</h4>';
+                    echo '<h4 class="fecha"> Inicio: ',date_format($date, 'd/m/y'),'</h4>';
+                    echo '<h4 class="fecha">  Fin: ',date_format($date2, 'd/m/y') ,'</h4>';
+                    echo '<h4 class="fecha">  De: ',date("h:i a", $hora),' a ', date("h:i a", $hora2) ,'</h4>';
                     echo '<p class="desc">',$tupla['descripcion'],'</p>';
-                    echo '<h4 class="lugar">Lugar: ',$tupla['telefono'],'</h4>';
+                    echo '<h4 class="lugar">Telefono: ',$tupla['telefono'],'</h4>';
                     echo '<h4 class="lugar">Precio: $',$tupla['precio'],'</h4>';
                     echo '</div>';
                 } 

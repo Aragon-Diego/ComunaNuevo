@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +17,8 @@
 <?php
     //Datos de la base
     $server = "localhost";
-    $user = "root";
-    $pass =null;
+    $user = "basededatos";
+    $pass ="ABC123";
     $dbase ="kiosco_intel";
 
     $conexion = mysqli_connect ($server,$user,$pass,$dbase)
@@ -24,8 +27,8 @@
     $consulta= mysqli_query ($conexion,"SELECT * FROM evento")
     or die ("Error en la consulta:".mysql_error());
     $nfilas = mysqli_num_rows ($consulta);
-    $sum = 0;
-
+    
+    
     
 
 ?>
@@ -50,8 +53,14 @@
                     $hora2 = strtotime($tupla['horaFin']);
                     $date = date_create($tupla['fechaINI']);
                     $date2 = date_create($tupla['fechaFIN']);
+                    $users = $tupla['propietarioID'];
+                    $consultaF = mysqli_query ($conexion,"SELECT usuario FROM users WHERE id='$users'")
+                    or die ("Error en la consulta:".mysql_error());
+                    $tuplaF = mysqli_fetch_array ($consultaF);
+                    $usuario = $tuplaF['usuario'];
                      
                     echo '<h3>', $tupla['titulo'] ,'</h3>';
+                    echo '<h4 class="fecha"> Evento organizado por: ',$usuario,'</h4>';
                     echo '<h4 class="fecha"> Inicio: ',date_format($date, 'd/m/y'),'</h4>';
                     echo '<h4 class="fecha"> Fin: ',date_format($date2, 'd/m/y'),'</h4>';
                     echo '<h4 class="fecha"> De: ',date("h:i a", $hora),' a ', date("h:i a", $hora2) ,'</h4>';

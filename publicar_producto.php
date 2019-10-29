@@ -15,6 +15,11 @@
 </head>
 <body>
 <?php
+if(!isset($_SESSION["user"]) && !isset($_SESSION["pass"])){
+    echo "<script>
+                            window.location.href='http://localhost/ComunaNuevo/login.php';
+                            </script>";
+}else{
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     //Datos de la base
     $server = "localhost";
@@ -31,6 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $horaFin = $_POST['horaFin'];
     $precio = $_POST['precio'];
     $descr = $_POST['descr'];
+    $propietario = $_SESSION["user"];
 
     // Create connection
     $conn = new mysqli($server, $user, $pass, $dbase);
@@ -40,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     $sql = "INSERT INTO producto (nombre,descripcion, usuarioID, telefono, precio, fecha_ini, fecha_fin, hora, hora_fin)
-    VALUES ('$nombreEvnt', '$descr', '12', '$tel', '$precio','$diaIn','$diaFin','$horaIn','$horaFin')";
+    VALUES ('$nombreEvnt', '$descr', '$propietario', '$tel', '$precio','$diaIn','$diaFin','$horaIn','$horaFin')";
 
     if ($conn->query($sql) === TRUE) {
         echo "<script>
@@ -91,6 +97,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <textarea name="descr" rows="10" cols="50" placeholder="Describa el Producto"></textarea>
                     <input type="submit" name="formulario" >
                 </form>
+<?php } ?>
           </div>
     </div>
 </body>

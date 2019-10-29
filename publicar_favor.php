@@ -15,6 +15,7 @@
 </head>
 <body>
 <?php
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     //Datos de la base
     $server = "localhost";
@@ -28,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $fecha = $_POST['fecha'];
     $lugar = $_POST['lugar'];
     $descr = $_POST['descr']; 
-    
+    $propietario = $_SESSION["user"];
 
     // Create connection
     $conn = new mysqli($server, $user, $pass, $dbase);
@@ -38,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     $sql = "INSERT INTO favor (propietarioID, voluntarioID, titulo, contenido,lugar, categoria, fechaINI)
-    VALUES ('1', '2', ' $nombreFav', '$descr','$lugar','$gender','$fecha')";
+    VALUES ('$propietario', '', ' $nombreFav', '$descr','$lugar','$gender','$fecha')";
 
     if ($conn->query($sql) === TRUE) {
         echo "<script>
@@ -88,6 +89,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="text" name="Lugar"> 
                 <input type="submit" name="formulario" >
             </form>
+<?php //// ?>
         </div>
     </div>
 </body>

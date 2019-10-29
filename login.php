@@ -1,5 +1,8 @@
 <?php
   session_start();
+  if(isset($_SESSION['user']) && isset($_SESSION['pass']) ){ 
+      session_destroy();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +26,8 @@
             //REGISTRO
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $server = "localhost";
-                $user = "root";
-                $pass ="";
+                $user = "basededatos";
+                $pass ="ABC123";
                 $dbase ="kiosco_intel";
                 if($_POST['login']){
                     $usuarioI = $_POST['usuarioI'];
@@ -40,9 +43,8 @@
                             //echo "Inicio de sesión exitoso";
                             
                             $_SESSION['user'] = $usuarioI;
-                            $_SESSION['pass'] = $contraI;
                             echo "<script>
-                            window.location.href='http://localhost/ComunaNuevo/dashboard.php';
+                            window.location.href='http://localhost/ComunaNuevo/ver_calendario.php';
                             </script>";
                             
                         }
