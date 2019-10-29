@@ -60,12 +60,11 @@
                      
                     echo '<h3>', $tupla['nombre'] ,'</h3>';
                     echo '<h4 class="fecha"> Lo vende: ',$usuario ,'</h4>';
-                    echo '<h4 class="fecha"> Inicio: ',date_format($date, 'd/m/y'),'</h4>';
-                    echo '<h4 class="fecha">  Fin: ',date_format($date2, 'd/m/y') ,'</h4>';
+                    echo '<h4 class="fecha"> Inicio: ',date_format($date, 'd/m/y'),' Fin: ',date_format($date2, 'd/m/y'),'</h4>';
                     echo '<h4 class="fecha">  De: ',date("h:i a", $hora),' a ', date("h:i a", $hora2) ,'</h4>';
-                    echo '<p class="desc">',$tupla['descripcion'],'</p>';
                     echo '<h4 class="lugar">Telefono: ',$tupla['telefono'],'</h4>';
                     echo '<h4 class="lugar">Precio: $',$tupla['precio'],'</h4>';
+                    echo '<p class="desc">',$tupla['descripcion'],'</p>';
                     echo '</div>';
                 } 
                 

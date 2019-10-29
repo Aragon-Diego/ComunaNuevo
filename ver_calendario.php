@@ -61,12 +61,10 @@ session_start();
                      
                     echo '<h3>', $tupla['titulo'] ,'</h3>';
                     echo '<h4 class="fecha"> Evento organizado por: ',$usuario,'</h4>';
-                    echo '<h4 class="fecha"> Inicio: ',date_format($date, 'd/m/y'),'</h4>';
-                    echo '<h4 class="fecha"> Fin: ',date_format($date2, 'd/m/y'),'</h4>';
-                    echo '<h4 class="fecha"> De: ',date("h:i a", $hora),' a ', date("h:i a", $hora2) ,'</h4>';
-                    echo '<p class="desc">',$tupla['contenido'],'</p>';
+                    echo '<h4 class="fecha"> Inicio: ',date_format($date, 'd/m/y'),' Fin: ',date_format($date2, 'd/m/y'),'</h4>';
                     echo '<h4 class="lugar">Lugar: ',$tupla['lugar'],'</h4>';
                     echo '<h4 class="lugar">Precio: $',$tupla['precio'],'</h4>';
+                    echo '<p class="desc">',$tupla['contenido'],'</p>';
                     echo '</div>';
                 } 
                 

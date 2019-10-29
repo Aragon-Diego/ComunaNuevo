@@ -55,3 +55,11 @@
     padding-top:5%;
     padding-bottom:5%;
 }
+.calendario .desc{
+    width:99%;
+    min-height:35%;
+    max-height:35%;
+}
+.producto h3 {
+    padding-bottom:5%;
+}
