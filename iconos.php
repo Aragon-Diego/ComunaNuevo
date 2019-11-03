@@ -29,7 +29,7 @@
                 echo '</div>';
             ?>    
         </a>
-        <a class="menuP" href="webrun:C:\xampp\htdocs\ComunaNuevo\juego\disparos\disparos.exe">
+        <a class="menuP" href="ver_juego.php">
             <?php
                 echo '<div class="menuDiv">';
                 echo '<img class="menuIcono" src="img/corazon.png" alt="icono de favores" />';
@@ -38,5 +38,6 @@
                 echo '</div>';
             ?>    
         </a>
+    <!-- webrun:C:\xampp\htdocs\ComunaNuevo\juego\disparos\disparos.exe -->
     </body>
 </html> 
