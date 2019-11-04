@@ -44,8 +44,9 @@
             
            ?>
         </table>
-        </div>
             
+        </div>
+            <input type="submit" name="Jugar" class="loginBtn" value="Jugar!"">
            </div>
         </div>
     </div>
