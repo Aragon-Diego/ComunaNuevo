@@ -30,7 +30,7 @@
                         $aDatos[$archivo[$i]] = $archivo[$i+1];
                            
                     }
-                    arsort($aDatos);
+                    asort($aDatos);
                    
 
 
@@ -53,7 +53,7 @@
                         ?>
                     </table>  
                 </div>
-                <a class="boton" href="webrun:C:\xampp\htdocs\ComunaNuevo\juego\disparos.exe">JUEGA!</a>
+                <a class="boton" href="webrun:C:\xampp\htdocs\ComunaNuevo\juego\disparos.exe">JUEGAR</a>
             </div>
         </div>
     </div>
