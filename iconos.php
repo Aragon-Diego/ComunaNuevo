@@ -38,6 +38,6 @@
                 echo '</div>';
             ?>    
         </a>
-    <!-- webrun:C:\xampp\htdocs\ComunaNuevo\juego\disparos\disparos.exe -->
+    <!-- webrun:C:\xampp\htdocs\ComunaNuevo\juego\disparos.exe -->
     </body>
 </html> 
