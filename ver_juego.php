@@ -30,8 +30,8 @@
                         $aDatos[$archivo[$i]] = $archivo[$i+1];
                            
                     }
-                    asort($aDatos);
-                   
+                    arsort($aDatos, SORT_NATURAL);
+                    
 
 
                 ?>
