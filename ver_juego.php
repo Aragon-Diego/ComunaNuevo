@@ -23,7 +23,7 @@
             <br/>
             <div class="detalles2">
                 <?php
-                    $archivo = file('actual.txt');
+                    $archivo = file('./juego/actual.txt');
                     $lineas =   count($archivo);
                     $aDatos = array();
                     $k = 0;
