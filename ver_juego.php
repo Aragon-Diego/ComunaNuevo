@@ -26,13 +26,14 @@
                     $archivo = file('./juego/actual.txt');
                     $lineas =   count($archivo);
                     $aDatos = array();
-                    $k = 0;
                     for($i = 0; $i<$lineas-1; $i+=2){ 
-                        $palabra = $archivo[$i].$archivo[$i+1];
-                        $aDatos[$k] = $palabra;
-                        $k++; 
+                        $aDatos[$archivo[$i]] = $archivo[$i+1];
+                           
                     }
-                    rsort($aDatos);
+                    arsort($aDatos);
+                   
+
+
                 ?>
                 <div class = "tabla">
                     <table style="width:100%">
@@ -43,12 +44,10 @@
                         <?php
                            //$aPalabra = array();
                             echo "<tr>";
-                            for($i = 0; $i<count($aDatos); $i++){ 
-                                $puntaje = intval(preg_replace('/[^0-9]+/', '', $aDatos[$i]), 10); 
-                                $nombre = preg_replace('/[0-9]/', '', $aDatos[$i]); 
+                            foreach ($aDatos as $key => $val){  
                                 echo "<tr>";
-                                echo "<td>",$nombre,"</td>";
-                                echo "<td>",$puntaje,"</td>";
+                                echo "<td>",$key,"</td>";
+                                echo "<td>",$val,"</td>";
                                 echo "</tr>";
                             }     
                         ?>
