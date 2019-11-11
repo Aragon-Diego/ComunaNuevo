@@ -9,5 +9,4 @@ Desarrollado en PHP y con una base de datos en SQL
 |       Name       |        Email              |   Role    |
 |  --------------  |   ----------------------- | --------- |
 |   Diego Aragón   |    diego.aragon@udem.edu  | Developer |
-|   Gladys Garza   |    gladys.garza@udem.edu  | Developer |
 | Irasema Casañeda | karen.castanedas@udem.edu | Developer |
