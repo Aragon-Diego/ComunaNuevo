@@ -1,7 +1,7 @@
 ## Proyecto COMUNA
 Proyecto para la comunidad -- en Santa Catarina, Nuevo León, de parte de la Universidad de Monterrey (UDEM) con apoyo de la Universidad de Chiba
 
-Desarrollado en PHP y con una base de datos en SQL 
+Desarrollado en PHP y con una base de datos en MySQL 
 
 
 ### El equipo de software
